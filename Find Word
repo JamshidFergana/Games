@@ -37,9 +37,11 @@ def perform_check_action(word, statuses, letter):
         if letter == l:
             if statuses[index] == False:
                 statuses[index] = True
-                return True
             else:
-                return False        
+                statuses[index]
+                return False
+
+    return True
 
 def print_word(word, statuses):
     for index, letter in enumerate(word):
