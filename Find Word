@@ -68,6 +68,7 @@ def main():
     if current_error >= max_errors:
         print('You lose!')
     else:
+        print('Secret Word: ', word)
         print('You win!')
     
 main()
