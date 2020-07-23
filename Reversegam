@@ -230,7 +230,7 @@ def playGame(playerTile, computerTile):
                 drawBoard(board)
                 printScore(board, playerTile, computerTile)
                 
-                input('Нажмите клавишу Enter для просмотра хода компьютера.')
+                # input('Нажмите клавишу Enter для просмотра хода компьютера.')
                 move = getComputerMove(board, computerTile)
                 makeMove(board, computerTile, move[0], move[1])
             turn = 'Человек'
