@@ -7,7 +7,7 @@ HEIGHT = 8 # Игровое поле содержит 8 клеток по выс
 
 def drawBoard(board):
     # Вывести игровое поле, переданное этой функции. Ничего не возвращать.
-    print(' 12345678')
+    print('  12345678')
     print(' +--------+')
     for y in range(HEIGHT):
         print('%s|' % (y+1), end='')
@@ -15,7 +15,7 @@ def drawBoard(board):
             print(board[x][y], end='')
         print('|%s' % (y+1))
     print(' +--------+')
-    print(' 12345678')
+    print('  12345678')
 
 def getNewBoard():
     # Создать структуру данных нового чистого игрового поля.
