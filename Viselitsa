@@ -1,0 +1,54 @@
+<html lang="en">
+	<head>
+        	<meta charset="utf-8">
+	        <title>Mening keyingi sahifalarim</title>
+	    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	</head>
+	<body>
+	    <p>Bismillahir Rohmanir Rohim.</p>
+	    <a href="https://daryo.uz" title="So'ngi yangiliklar">Shu yerga bosing</a>
+	    <script>
+		var words = [
+"programma",
+ "makaka", "chiroyli",
+ "oladushek"
+];
+
+
+		var word = words[Math.floor(Math.random() * words.length)];
+
+
+		var answerArray = [];
+
+		for (var i = 0; i < word.length; i++) {
+ 
+			answerArray[i] = "_";
+
+		}
+
+		
+var remainingLetters = word.length;
+
+		
+while (remainingLetters > 0) {
+  
+			var guess = prompt("Ugadayte bukvu ili najmite Otmena dlya vixoda - " + answerArray.join(" "));
+
+		if (guess === null) {
+				break;
+			} else if (guess.length !== 1) {
+				alert("Pojaluysta, vvedite tolko odnu bukvu");
+			} else {
+				for (var j = 0; j < word.length; j++) {
+					if (word[j] === guess) {
+						answerArray[j] = guess;
+						remainingLetters--;
+					}
+				}
+
+			}
+		}
+		alert("Otlichno! Bilo zagadano slovo - " + word);
+	    </script>
+	</body>
+</html>
