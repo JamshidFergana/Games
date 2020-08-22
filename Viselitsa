@@ -30,23 +30,32 @@
 var remainingLetters = word.length;
 
 		
-while (remainingLetters > 0) {
+var remainErrors = 10;
+
+		
+while (remainingLetters > 0 && remainErrors > 0) {
   
-			var guess = prompt("Ugadayte bukvu ili najmite Otmena dlya vixoda - " + answerArray.join(" "));
+			var guess = prompt(("Ugadayte bukvu ili najmite Otmena dlya vixoda - " + answerArray.join(" ") + "  
+
+Popitki - ").toLowerCase() + remainErrors);
 
 		if (guess === null) {
-				break;
-			} else if (guess.length !== 1) {
-				alert("Pojaluysta, vvedite tolko odnu bukvu");
-			} else {
-				for (var j = 0; j < word.length; j++) {
-					if (word[j] === guess) {
-						answerArray[j] = guess;
-						remainingLetters--;
-					}
+			break;
+		} else if (guess.length !== 1) {
+			alert("Pojaluysta, vvedite tolko odnu bukvu");
+			remainErrors--;
+		} else {
+			var r = remainingLetters;
+			for (var j = 0; j < word.length; j++) {
+				if (answerArray[j] === "_" && word[j] === guess) {
+					answerArray[j] = guess;
+					remainingLetters--;
 				}
-
 			}
+			if (r === remainingLetters) {
+				remainErrors--;
+			}
+		}
 		}
 		alert("Otlichno! Bilo zagadano slovo - " + word);
 	    </script>
